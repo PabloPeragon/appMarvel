@@ -19,10 +19,10 @@ final class appMarvelTests: XCTestCase {
     }
 
     func testMarvelModel() {
-        let code = 1
-        let status = "Test status"
-        let offset = 1
-        let limit = 1
+        //let code = 1
+        //let status = "Test status"
+        //let offset = 1
+        //let limit = 1
         
         
         let model = MarvelModel(code: 1, status: "Test status", copyright: "Test copyright", attributionText: "Test attributionText", attributionHTML: "attributionHTML", etag: "Text etag", data: DataMarvel(offset: 1, limit: 1, total: 1, count: 1, results: [Result(id: 1, title: "Text title", name: "Text name", description: "Text description", thumbnail: Thumbnail(path: "Text path", thumbnailExtension: Extension.jpg), resourceURI: "Text resourceURI")]))
@@ -56,7 +56,7 @@ final class appMarvelTests: XCTestCase {
     
     func testRepositoryImplHeros() async {
         
-        var suite: RepositoryImpl = RepositoryImpl(remoteDataSource: RemoteDataSourceImpl())
+        let suite: RepositoryImpl = RepositoryImpl(remoteDataSource: RemoteDataSourceImpl())
         XCTAssertNotNil(suite)
         
         let dataTest = try! await suite.getHerosMarvel()
